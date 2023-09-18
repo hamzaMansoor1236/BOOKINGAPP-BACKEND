@@ -13,7 +13,7 @@ export const createRoom =async (req,res,next)=>{
             await Hotel.findByIdAndUpdate(hotelId, {
                 $push: { rooms: savedRoom._id },
               });
-            console.log("hahaha")
+            
         } catch (error) {
             next(error)
         }
@@ -45,7 +45,7 @@ export const deleteRoom = async (req, res, next) => {
             await Hotel.findByIdAndUpdate(hotelId, {
                 $pull: { rooms: req.params.id },
               });
-            console.log("hahaha")
+            
         } catch (error) {
             next(error)
         }
